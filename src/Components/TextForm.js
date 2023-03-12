@@ -4,9 +4,11 @@ export default function TextForm(props) {
 
     const handleUpClick = () => {
         setText(text.toUpperCase());
+        props.popAlert("Converted to Uppercase","success")
     }
     const handleLoClick = () => {
         setText(text.toLowerCase());
+        props.popAlert("Converted to lowercase","success")
     }
     const handleClearClick = () => {
         setText(" ");
@@ -21,14 +23,16 @@ export default function TextForm(props) {
         let text = document.getElementById('myBox');
         text.select();
         navigator.clipboard.writeText(text.value);
+        props.popAlert("Copied to Clipboard","success")
     }
 
     const removeExtraSpaces = () => {
         let newText = text.split(/[ ]+/);
         setText(newText.join(" "));
+        props.popAlert("Extra spaces removed!","success")
     }
 
-    const [text, setText] = useState('Enter text here');
+    const [text, setText] = useState('');
     // text = 'New text';
     // setText('Fucking text');
 
