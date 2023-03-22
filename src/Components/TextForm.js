@@ -33,8 +33,7 @@ export default function TextForm(props) {
     }
 
     const [text, setText] = useState('');
-    // text = 'New text';
-    // setText('Fucking text');
+   
 
     return (
         <div className='container'>
